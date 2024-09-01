@@ -1,6 +1,7 @@
 {
   "name": "project2",
   "version": "1.0.0",
+  "homepage": "https://github.com/tosindgreat/Project2.git",
   "private": true,
   "type": "module",
   "main": "index.js",
