@@ -1,7 +1,7 @@
 {
   "name": "project2",
   "version": "1.0.0",
-  "homepage": "https://github.com/tosindgreat/Project2.git",
+  "homepage": "https://tosindgreat.github.io/Project2",
   "private": true,
   "type": "module",
   "main": "index.js",
@@ -13,17 +13,20 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.9.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "gh-pages": "^6.1.1",
     "vite": "^5.4.1"
   }
 }

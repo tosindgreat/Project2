@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-// import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom/client";
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -8,6 +8,8 @@ import Card from './components/Card';
 import SignInForm from "./components/SigInform";
 import SignUpForm from "./components/SignUpForm";
 import { cardData } from './data';
+// import styles from './index.css';
+
 
 
 

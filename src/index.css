@@ -1,0 +1,9 @@
+.summerStyle{
+    color:lightsalmon;
+    background-color: lawngreen;
+    font-size: 34px;
+    border:3px solid rgb(239, 93, 142);
+    border-radius: 10px;
+}
+
+body{background-color: lightpink;}
