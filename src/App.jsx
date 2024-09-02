@@ -1,126 +1,87 @@
-import React,{useState} from "react";
-import ReactDOM from "react-dom/client";
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import Card from './components/Card';
-import SignInForm from "./components/SigInform";
-import SignUpForm from "./components/SignUpForm";
+import AuthForms from "./components/AuthForms";
 import { cardData } from './data';
-// import styles from './index.css';
-
-
-
-
-const h1Style={color:'orange',fontSize:'50px'};
-
-const userInfo="TEST AGAIN";
-
+import './index.css'
 const App = () => {
   return (
-      <div>
+      <div
+          style={{
+              backgroundImage: `url('/backgroundimage.jpeg')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundAttachment: 'fixed',
+              height: '300vh',
+              width: '100vw'
+          }}
+      >
+          {/* Authentication Forms Button at the top-right corner */}
+          <AuthForms />
+
+          {/* Main website content */}
           <Header />
           <Navbar />
           <Hero />
-          <div className="card-container">
+          {/* <div className="card-container">
               {cardData.map((item, index) => (
                   <Card key={index} data={item} />
               ))}
-          </div>
-          <Footer />
+          </div> */}
+
+          <div className="card-container">
+        {cardData.map((item) => (
+            <Card key={item.id} data={item} />
+        ))}
+    </div>
+);
+
+            <Footer />
+
+          {/* Time Component */}
+          <Time />
       </div>
   );
+  
+
 };
 
-
-
-
-
-// Conditional rendering
-// let isClicked=false;
-// function Form(){
-//     isClicked=true;
-// if(isClicked){
-//     return (
-//         <div> <h1>TRACK A</h1></div>
-//     )
-// }
-// else{
-//        <div> <p>TRACK B</p> <a>check more info</a></div>
-// }
-
-
-// }
-
-
-
-// let num=0
-// function plus1(){
-//     num++;
-//   console.log(num);
- 
-
-// const root = ReactDOM.createRoot(document.getElementById("root")); 
-// root.render(
-  
-//     <App />
-   
-//    );
-   
-// }
 function Time() {
-
-    setInterval(refreshTime,1000)
-    // const [firstName,lastName,dob,email]=['Peter','Smith',1990,'peter@']
-    //  console.log(dob);
-    let currrentTime=new Date().toLocaleTimeString();
-    const [num,updateNum]=useState(100);
-    const [time,updateTime]=useState(currrentTime);
     
-    // console.log(num);
-    // let isCliked=true;
-    // const h1style={backgroundColor:"lightgreen"}
-    function plus1(){
-        updateNum(num+1);
-    //     value[0]++;
-    //    console.log(value[0])
+    const [time, updateTime] = useState(new Date().toLocaleTimeString());
+    const [num, updateNum] = useState(100);
+    function plus1() {
+        updateNum(num + 1);
     }
 
-    function minus1(){
-        updateNum(num-1);
-    //     value[0]++;
-    //    console.log(value[0])
+    function minus1() {
+        updateNum(num - 1);
     }
 
-    function refreshTime(){
-        currrentTime=new Date().toLocaleTimeString();
-        updateTime(currrentTime)
+    function refreshTime() {
+        const currentTime = new Date().toLocaleTimeString();
+        updateTime(currentTime);
+    }
 
-   }
+    // Automatically update time every second
+    setInterval(refreshTime, 1000);
 
-
-// UI=f(state)
     return (
-<div>
-    {/* <header title="show something here">
-      <h1 contentEditable="false" style={h1Style}> HELLO Header TEST section  {" plain text"} {userInfo} </h1>
-    </header> */} 
-     {/* <nav> <a>Home</a><a>About</a></nav>
-     <div className="heroStyle">Hero Image block </div> */}
-    <div> 
-      {/* <h1 style={isCliked? h1style:null}>{num}</h1> */}
-      <h1>{num}</h1>
-      <button onClick={plus1}>+</button>
-      <button onClick={minus1}>-</button>
-    </div>
-      <p>{time}</p>    
-       <button onClick={refreshTime}>check current time</button>
-
-    {/* <footer>FOOTER block
-    </footer>  */}
-  
-  </div>)}
-
+        <div>
+            <div>
+                <h1>{num}</h1>
+                <button onClick={plus1}>+</button>
+                <button onClick={minus1}>-</button>
+            </div>
+            <p>{time}</p>
+            <button onClick={refreshTime}>Check current time</button>
+        </div>
+    );
+}
 
 export default App;

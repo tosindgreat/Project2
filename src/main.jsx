@@ -1,22 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './App'; // Assuming App is in the same directory
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
+  <React.StrictMode>
     <App />
-  
+  </React.StrictMode>
 );
 
+// Example JavaScript code (commented out)
+// let dateInfo = new Date();
+// let currentTime = dateInfo.toLocaleTimeString();
+// console.log(currentTime);
 
-
-// let dateInfo=new Date();
-// let currrentTime=dateInfo.toLocaleTimeString();
-// console.log(currrentTime)
-
-
-// function doSth(){
+// function doSth() {
 //   console.log('printing..')
 // }
-// setInterval(doSth,1000);
+// setInterval(doSth, 1000);

@@ -22,9 +22,10 @@ const Card = ({ data }) => {
                 <span>{quantity}</span>
                 <button onClick={() => handleQuantityChange(1)}>+</button>
             </div>
-            <button onClick={handleOrderSubmit}>Submit/Review Order</button>
+            <button onClick={handleOrderSubmit}>Submit Order</button>
         </div>
     );
 };
 
 export default Card;
+
