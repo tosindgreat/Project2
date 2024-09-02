@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import Card from './components/Card';
 import AuthForms from "./components/AuthForms";
 import { cardData } from './data';
-import './index.css'
+// import './index.css'
 const App = () => {
   return (
       <div
